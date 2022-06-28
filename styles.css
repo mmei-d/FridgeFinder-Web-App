@@ -5,6 +5,7 @@
     margin: 0;
 }
 
+/* header */
 header {
     display: flex;
     flex-direction: column;
@@ -20,6 +21,7 @@ header h1 {
     color: #5e503f;
     font-family: 'Playfair Display', serif;
     padding: 24px 0px 24px 0px;
+    font-size: 48px;
 }
 
 header p {
@@ -33,6 +35,7 @@ header p {
     gap: 8px;
     padding: 16px 0px 16px 0px;
 }
+/* end header */
 
 /* input field */
 #search-input {
@@ -50,8 +53,9 @@ header p {
     outline: none;
     border-color: #5e503f;
 }
+/* end input field */
 
-/* add ingredients button */
+/* buttons */
 button {
     display: flex;
     flex-direction: row;
@@ -86,20 +90,23 @@ button:hover > img {
     animation-duration: 0.25s;
     animation-timing-function: ease-out;
 }
+/* end buttons */
 
-
-/* end add ingredients button */
-
-/* added ingredients section */
+/* added ingred section */
 #added-ingred {
     background-color: #f2f4f3;
     padding: 32px 10% 32px 10%;
+    font-family: 'Open Sans', sans-serif;;
 }
 
-#added-ingred h3 {
+#added-ingred h2 {
     color: #0a0908;
     font-family: 'Playfair Display', serif;
     padding-bottom: 16px;
+}
+
+.hidden {
+    display: none;
 }
 
 #ingred-buttons {
@@ -107,6 +114,7 @@ button:hover > img {
     flex-wrap: wrap;
     gap: 8px 8px;
 }
+/* end added ingred section */
 
 /* Large devices (small screens, laptops, 1024px and down) */
 @media screen and (max-width: 1024px) {
