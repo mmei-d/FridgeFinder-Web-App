@@ -1,0 +1,116 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap');
+
+* {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 10% 80px 10%;
+    gap: 16px;
+    color: #0a0908;
+    background-image: url('images/ramen.jpeg');
+    background-size: 1440px;
+}
+
+header h1 {
+    color: #5e503f;
+    font-family: 'Playfair Display', serif;
+    padding: 24px 0px 24px 0px;
+}
+
+header p {
+    font-family: 'Open Sans', sans-serif;
+    width: 50%;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 16px 0px 16px 0px;
+}
+
+/* input field */
+#search-input {
+    border-radius: 10px;
+    border-width: 2.5px;
+    border-color: #a9927d;
+    border-style: solid;
+    padding: 8px 16px 8px 16px;
+    font-size: 16px;
+    color: #0a0908;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #5e503f;
+}
+
+/* add ingredients button */
+button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px 8px 16px;
+    background-color: #a9927d;
+    border-style: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+}
+
+button p {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@keyframes shake {
+    100% {
+        transform: rotate(90deg) scale(1.25,1.25);
+    }
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #5e503f;
+}
+
+button:hover > img {
+    animation-name: shake;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+}
+
+
+/* end add ingredients button */
+
+/* added ingredients section */
+#added-ingred {
+    background-color: #f2f4f3;
+    padding: 32px 10% 32px 10%;
+}
+
+#added-ingred h3 {
+    color: #0a0908;
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 16px;
+}
+
+#ingred-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 8px;
+}
+
+/* Large devices (small screens, laptops, 1024px and down) */
+@media screen and (max-width: 1024px) {
+    header p {
+        width: 100%;
+    }
+}
