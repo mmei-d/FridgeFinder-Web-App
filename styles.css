@@ -107,7 +107,7 @@ button:hover > img {
 h2 {
     color: #49111c;
     font-family: 'Playfair Display', serif;
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .hidden {
@@ -119,6 +119,31 @@ h2 {
     flex-wrap: wrap;
     gap: 8px 8px;
 }
+
+/* search button */
+#search-btn {
+    margin-top: 16px;
+    margin-top: 16px;
+    background-color: #8b4754;
+}
+
+@keyframes grow {
+    100% {
+        transform: scale(1.25,1.25);
+    }
+}
+
+#search-btn:hover {
+    cursor: pointer;
+    background-color: #49111c;
+}
+
+#search-btn:hover > img {
+    animation-name: grow;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+}
+/* end search button */
 /* end added ingred section */
 
 hr {
@@ -139,19 +164,19 @@ hr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 38px 38px;
+    gap: 22px 22px;
     justify-content: center;
+    margin: 32px 0px 32px 0px;
 }
 
 .one-recipe {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    width: 19%;
+    width: 20%;
     background-color: white;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 8px 24px rgb(209, 205, 201);
+    border-radius: 10px;
+    box-shadow: 0px 2px 24px rgb(246, 242, 238);
 }
 
 .one-recipe img {
@@ -162,7 +187,29 @@ h3 {
     color: #0a0908;
     font-family: 'Playfair Display', serif;
     font-size: 20px;
-    padding: 5px 0px 5px 0px;
+    padding: 15px 0px 15px 0px;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cook-time {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: center;
+    width:75px;
+}
+
+.cook-time img{
+    width: 16px;
+}
+
+.one-recipe p {
+    font-size: 14px;
 }
 
 .one-recipe:hover {

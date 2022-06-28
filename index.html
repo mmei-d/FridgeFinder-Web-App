@@ -10,7 +10,8 @@
 <body>
     <header>
         <h1>Website Title</h1>
-        <p>Don't know what to cook? Discover recipes with the ingredients you already have in your fridge and pantry! Add items below, and we'll instantly find you the recipes. The only ingredients we assume you already have are water, ice, flour, sugar, oil, black pepper, and salt.</p>
+        <p>Don't know what to cook? Discover recipes with the ingredients you already have in your fridge and pantry!</p>
+        <p>Add items below, and click "Search For Recipes" to instantly find your next meal idea. If you remove an ingredient, make sure to click the search button again. The only ingredients we assume you already have are water, flour, sugar, oil, black pepper, and salt.</p>
         <div id="search">
             <input id="search-input" type="text" placeholder="Add Ingredients..." autocomplete="off">
             <button id="add">
@@ -24,11 +25,15 @@
         <h2>Ingredients in Your Pantry</h2>
         <p id="no-ingred">No ingredients added yet...</p>
         <div id="ingred-buttons"></div>
+        <button id="search-btn" class="hidden">
+            <img src="images/search.svg">
+            <p>Search For Recipes</p>
+        </button>
     </section>
 
     <section id="recipes">
         <hr>
-        <h2>Popular Recipes</h2>
+        <h2>Top Popular Recipes</h2>
         <div id="all-recipes"></div>
     </section>
 
