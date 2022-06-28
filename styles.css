@@ -10,7 +10,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 80px 10% 80px 10%;
+    padding: 70px 10% 70px 10%;
     gap: 16px;
     color: #0a0908;
     background-image: url('images/ramen.jpeg');
@@ -24,8 +24,11 @@ header h1 {
     font-size: 48px;
 }
 
-header p {
+p {
     font-family: 'Open Sans', sans-serif;
+}
+
+header p {
     width: 50%;
 }
 
@@ -34,6 +37,7 @@ header p {
     flex-direction: row;
     gap: 8px;
     padding: 16px 0px 16px 0px;
+    width: 49%;
 }
 /* end header */
 
@@ -47,6 +51,7 @@ header p {
     font-size: 16px;
     color: #0a0908;
     font-family: 'Open Sans', sans-serif;
+    width: 100%;
 }
 
 #search-input:focus {
@@ -71,7 +76,6 @@ button {
 
 button p {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
 }
 
 @keyframes shake {
@@ -97,10 +101,11 @@ button:hover > img {
     background-color: #f2f4f3;
     padding: 32px 10% 32px 10%;
     font-family: 'Open Sans', sans-serif;;
+    color: #0a0908;
 }
 
-#added-ingred h2 {
-    color: #0a0908;
+h2 {
+    color: #49111c;
     font-family: 'Playfair Display', serif;
     padding-bottom: 16px;
 }
@@ -116,9 +121,68 @@ button:hover > img {
 }
 /* end added ingred section */
 
+hr {
+    background-color: #a9927d;
+    height: 0.5px;
+    margin-bottom: 32px;
+}
+
+/* recipes section */
+#recipes {
+    background-color: #f2f4f3;
+    padding: 0px 10% 32px 10%;
+    font-family: 'Open Sans', sans-serif;
+    color: #0a0908;
+}
+
+#all-recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 38px 38px;
+    justify-content: center;
+}
+
+.one-recipe {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 19%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 24px rgb(209, 205, 201);
+}
+
+.one-recipe img {
+    width: 100%;
+}
+
+h3 {
+    color: #0a0908;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    padding: 5px 0px 5px 0px;
+}
+
+.one-recipe:hover {
+    cursor: pointer;
+}
+
+.one-recipe:hover > h3{
+    color: #a9927d;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+/* end recipes section */
+
 /* Large devices (small screens, laptops, 1024px and down) */
 @media screen and (max-width: 1024px) {
     header p {
+        width: 100%;
+    }
+
+    #search {
         width: 100%;
     }
 }
