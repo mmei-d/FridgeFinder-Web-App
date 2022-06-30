@@ -227,31 +227,112 @@ h3 {
 /* end recipes section */
 
 /* popup modal */
-.modal-container {
+.modal {
     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #f2f4f3;
+    width: 40%;
+    height: 90%;
+    color: #0a0908;
+    padding: 40px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal-active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal img {
+    width: 100%;
+}
+
+.modal h2 {
+    margin-top: 16px;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.modal-cook-time {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+.modal-cook-time img {
+    width: 23px;
+}
+
+.cuisine {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+.cuisine img {
+    width: 23px;
+}
+
+.health-score {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+.health-score img {
+    width: 23px;
+}
+
+.modal hr {
+    margin: 22px 0px 0px 0px;
+}
+
+.modal h3 {
+    padding-bottom: 0px;
+}
+
+.modal ul, .modal ol {
+    margin-top: 5px;
+    font-family: 'Open Sans', sans-serif;
+    padding-left: 25px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0, 0.3);
-    opacity: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(94, 80, 63, 0.5);
     pointer-events: none;
 }
 
-.modal-container.show {
+.overlay-active {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: all;
 }
-
-.modal {
-    background-color: #f2f4f3;
-    width: 80%;
-    padding: 20px;
-    border-radius: 10px;
-}
+/* end popup modal */
 
 
 /* Large devices (small screens, laptops, 1024px and down) */
