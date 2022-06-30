@@ -64,6 +64,7 @@ const popRecipes = () => {
         // recipe card
         const recipeCard = document.createElement('div')
         recipeCard.classList.add('one-recipe')
+        // recipeCard.setAttribute('data-modal-target', "#modal")
         recipeCardSection.append(recipeCard)
 
         // card image
@@ -103,6 +104,18 @@ const popRecipes = () => {
         let servingsVal = 2
         servings.innerHTML = 'Servings: ' + servingsVal
         details.append(servings)
+
+        // open modal
+        const modalContainer = document.querySelector('.modal-container')
+        const closeModalButton = document.querySelector('#close-modal')
+
+        recipeCard.addEventListener('click', () => {
+            modalContainer.classList.add('show')
+        })
+
+        closeModalButton.addEventListener('click', () => {
+            modalContainer.classList.remove('show')
+        })
     }
 }
 
@@ -112,7 +125,7 @@ popRecipes()
 // search for recipes with ingredients in pantry
 const search = () => {
     let numRecipes = 12
-    recipeSectionTitle.innerHTML = `Search Results - You Can Make ${numRecipes} Recipes`
+    recipeSectionTitle.innerHTML = `${numRecipes} Recipes Based on Your Ingredients`
 }
 
 searchBtn.addEventListener('click', search)

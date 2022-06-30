@@ -1,0 +1,166 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2.5px solid #a9927d;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #f2f4f3;
+    width: 80%;
+    color: #0a0908;
+    padding: 20px;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(94, 80, 63, 0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+/* end popup modal */
+
+/* .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2.5px solid #a9927d;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #f2f4f3;
+    width: 80%;
+    color: #0a0908;
+    padding: 20px;
+}
+
+.modal-active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(94, 80, 63, 0.5);
+    pointer-events: none;
+}
+
+.overlay-active {
+    opacity: 1;
+    pointer-events: all;
+} */
+
+
+const recipeOpenModal = document.querySelectorAll('[data-modal-target]')
+const closeModalButton = document.querySelectorAll('[data-close-button]')
+const overlay = document.querySelector('#overlay')
+
+function openModal(modal){
+    if(modal === null){
+        return
+    }
+    
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+recipeOpenModal.forEach(recipe => {
+    recipe.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+function closeModal(modal){
+    if(modal === null){
+        return
+    }
+    
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+closeModalButton.forEach(recipe => {
+    recipe.addEventListener('click', () => {
+        const modal = document.querySelector('.modal')
+        closeModal(modal)
+    })
+})
+
+// if you click outside the modal, it closes
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
+    })
+})
+
+// toggle modal
+// const idleRecipeCard = document.querySelector('.one-recipe')
+// const closeModalButton = document.querySelector('#close-modal')
+// const overlay = document.querySelector('.overlay')
+// const modal = document.querySelector('.modal')
+
+// const openModal = () => {
+//     modal.classList.add('modal-active')
+//     overlay.classList.add('overlay-active')
+// }
+
+// idleRecipeCard.addEventListener('click', openModal)
+
+// const closeModal = () => {
+//     modal.classList.remove('modal-active')
+//     overlay.classList.remove('overlay-active')
+// }
+
+// closeModalButton.addEventListener('click', closeModal)
+
+// // if you click outside the modal, it closes
+// overlay.addEventListener('click', () => {
+//     closeModal(modal)
+// })
+
+
+
+<div class="modal active" id="modal">
+<div class="modal-header">
+    <img src="images/food-example.jpeg">
+    <button data-close-button>
+        <img src="images/x-close.svg">
+    </button>
+</div>
+<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum non dolorem, voluptatibus cupiditate facilis, error iusto perspiciatis optio minima laudantium qui laboriosam quod excepturi facere est sed unde dolore accusantium, voluptates repellendus quaerat nam sint mollitia! Aperiam, fugit ipsam voluptate rerum architecto similique nesciunt voluptatibus dolor? Dolorum velit asperiores nisi eum quos praesentium, accusantium voluptas cupiditate dolor id iusto distinctio delectus quae culpa perferendis in quisquam magnam quasi quo repudiandae ab doloremque, veniam voluptates? Dignissimos repudiandae dolores enim praesentium esse?</div>
+</div>
+<div class="active" id="overlay"></div>
+
+<!-- <div class="modal">
+<div class="modal-header">
+    <img src="images/food-example.jpeg">
+    <button id="close-modal">
+        <img src="images/x-close.svg">
+    </button>
+</div>
+<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum non dolorem, voluptatibus cupiditate facilis, error iusto perspiciatis optio minima laudantium qui laboriosam quod excepturi facere est sed unde dolore accusantium, voluptates repellendus quaerat nam sint mollitia! Aperiam, fugit ipsam voluptate rerum architecto similique nesciunt voluptatibus dolor? Dolorum velit asperiores nisi eum quos praesentium, accusantium voluptas cupiditate dolor id iusto distinctio delectus quae culpa perferendis in quisquam magnam quasi quo repudiandae ab doloremque, veniam voluptates? Dignissimos repudiandae dolores enim praesentium esse?</div>
+</div>
+<div class="overlay"></div> -->
