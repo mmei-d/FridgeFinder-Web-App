@@ -12,14 +12,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 70px 10% 70px 10%;
+    padding: 70px 10%;
     gap: 16px;
     color: #0a0908;
     background-image: url('images/ramen.jpeg');
     background-size: 1440px;
 }
 
-header h1 {
+h1 {
     color: #5e503f;
     font-family: 'Playfair Display', serif;
     padding: 24px 0px 24px 0px;
@@ -167,7 +167,7 @@ hr {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 22px 22px;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 32px 0px 32px 0px;
 }
 
@@ -197,6 +197,7 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-grow: 2;
 }
 
 .cook-time {
@@ -205,6 +206,7 @@ h3 {
     gap: 4px;
     align-items: center;
     width:75px;
+    align-self: flex-end;
 }
 
 .cook-time img{
@@ -213,6 +215,7 @@ h3 {
 
 .one-recipe p {
     font-size: 14px;
+    align-self: flex-end;
 }
 
 .one-recipe:hover {
@@ -261,6 +264,7 @@ h3 {
     flex-direction: row;
     gap: 20px;
     align-items: center;
+    margin-bottom: 16px;
 }
 
 .modal-cook-time {
@@ -333,6 +337,21 @@ h3 {
     pointer-events: all;
 }
 /* end popup modal */
+
+/* footer */
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #a9927d;
+    padding: 60px 10%;
+    color: white;
+}
+
+footer h1 {
+    color: white;
+}
+/* end footer */
 
 
 /* Large devices (small screens, laptops, 1024px and down) */
