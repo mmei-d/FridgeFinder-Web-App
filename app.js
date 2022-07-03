@@ -338,7 +338,7 @@ const search = async () => {
         let numRecipes = data.length
         recipeSectionTitle.innerHTML = `${numRecipes} Recipes Based on Your Ingredients`
 
-        // get recipe information for each recipe
+        // get recipe information for each recipe from Spoonacular Nutrition, Recipe, and Food API
         for(let i = 0; i < data.length; i++){
             let recipeID = data[i].id
 
