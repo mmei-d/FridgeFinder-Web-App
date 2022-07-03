@@ -265,6 +265,7 @@ h3 {
     gap: 20px;
     align-items: center;
     margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .modal-cook-time {
@@ -353,7 +354,6 @@ footer h1 {
 }
 /* end footer */
 
-
 /* Large devices (small screens, laptops, 1024px and down) */
 @media screen and (max-width: 1024px) {
     header p {
@@ -362,5 +362,31 @@ footer h1 {
 
     #search {
         width: 100%;
+    }
+
+    .modal {
+        width: 55%;
+    }
+}
+
+/* Medium devices (tablets, 768px and down) */
+@media screen and (max-width: 768px) {
+    #all-recipes {
+        justify-content: center;
+    }
+
+    .modal {
+        width: 65%;
+    }
+
+    h1 {
+        align-self: center;
+    }
+}
+
+/* Small devices (phones, 480px and down) */
+@media screen and (max-width: 480px) {
+    .modal {
+        width: 80%;
     }
 }
