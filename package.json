@@ -1,0 +1,22 @@
+{
+  "name": "fridgefinder-web-app",
+  "version": "1.0.0",
+  "description": "Don't know what to cook? Find your next meal idea with the ingredients you already have in your fridge and pantry!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmei-d/Recipe-Finder-Web-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmei-d/Recipe-Finder-Web-App/issues"
+  },
+  "homepage": "https://github.com/mmei-d/Recipe-Finder-Web-App#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

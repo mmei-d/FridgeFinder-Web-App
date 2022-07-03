@@ -1,8 +1,11 @@
+// retrieve hidden API key
+require('dotenv').config()
+
 // set up Spoonacular Nutrition, Recipe, and Food API and API key
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'd5a99d1802msh5b96d6d154aec08p15be3cjsnd7ee3bd1833e',
+        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
         'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     }
 }
