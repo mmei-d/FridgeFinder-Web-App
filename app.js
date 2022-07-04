@@ -1,11 +1,8 @@
-// retrieve hidden API key
-require('dotenv').config()
-
 // set up Spoonacular Nutrition, Recipe, and Food API and API key
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+        'X-RapidAPI-Key': 'YOUR_API_KEY',
         'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
     }
 }
@@ -77,21 +74,27 @@ const addIngred = () => {
 
 addButton.addEventListener('click', addIngred)
 
-// add top 2 popular recipes - default home page
+// add top 16 popular recipes - default home page
 const recRecipes = () => {
     recipeSectionTitle.innerHTML = 'Recommended Recipes'
     
-    // get random recipes from Spoonacular Nutrition, Recipe, and Food API
-    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=2', options)
+    // "Get Random Recipes" from Spoonacular Nutrition, Recipe, and Food API
+    fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?number=16', options)
         .then(response => response.json())
         .then(response => {
             console.log(response)
 
             // make recipe cards
             for(let i = 0; i < 16; i++){
+                // if recipe cards already exist, get rid of them
+                if(document.querySelector(`.one-recipe-${i}`) !== null){
+                    removeAllChildNodes(recipeCardSection)
+                }
+
                 // recipe card
                 const recipeCard = document.createElement('div')
                 recipeCard.classList.add('one-recipe')
+                recipeCard.classList.add(`one-recipe-${i}`)
                 recipeCardSection.append(recipeCard)
 
                 // card image
@@ -147,6 +150,12 @@ const recRecipes = () => {
                 let listOfIngred = response.recipes[i].extendedIngredients
 
                 // --- make modals for each recipe card --- //
+                // if recipe card modals already exist from initial search, get rid of them
+                if(document.querySelector(`.search-modal-${i}`) !== null){
+                    removeAllChildNodes(document.querySelector(`.search-modal-${i}`))
+                    document.querySelector(`.search-modal-${i}`).remove()
+                }
+                
                 // modal div
                 const modalDiv = document.createElement('div') 
                 modalDiv.classList.add('modal')
@@ -321,7 +330,14 @@ const recRecipes = () => {
 }
 
 // automatically load top popular results when you open the sight for the first time
-// recRecipes()
+recRecipes()
+
+// remove element and all its children - method used in search() and recRecipes() functions if recipes cards and their modals pre-exist
+const removeAllChildNodes = parent => {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild)
+    }
+}
 
 // search for recipes with ingredients in pantry
 const search = async () => {
@@ -332,16 +348,16 @@ const search = async () => {
     }
 
     try {
-        // search 2 recipes by ingredients from Spoonacular Nutrition, Recipe, and Food API
-        // 1st API call in chain
-        const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredListString}&number=2&ignorePantry=true&ranking=1`, options)
+        // "Search Recipes by Ingredients" from Spoonacular Nutrition, Recipe, and Food API
+        // 1st API call in chain to get recipe IDs
+        const response = await fetch(`https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=${ingredListString}&number=16&ignorePantry=true&ranking=2`, options)
         const data = await response.json()
 
         // change recipes header
         let numRecipes = data.length
         recipeSectionTitle.innerHTML = `${numRecipes} Recipes Based on Your Ingredients`
 
-        // get recipe information for each recipe from Spoonacular Nutrition, Recipe, and Food API
+        // "Get Recipe Information" for each recipe from Spoonacular Nutrition, Recipe, and Food API
         for(let i = 0; i < data.length; i++){
             let recipeID = data[i].id
 
@@ -350,9 +366,15 @@ const search = async () => {
             const dataDetails = await responseDetails.json()
             console.log(dataDetails)
 
+            // if recipe cards already exist from initial search, get rid of them
+            if(document.querySelector(`.one-recipe-${i}`) !== null){
+                removeAllChildNodes(recipeCardSection)
+            }
+
             // make recipe card
             const recipeCard = document.createElement('div')
             recipeCard.classList.add('one-recipe')
+            recipeCard.classList.add(`one-recipe-${i}`)
             recipeCardSection.append(recipeCard)
 
             // card image
@@ -409,6 +431,12 @@ const search = async () => {
 
             // --- make modals for each recipe card --- //
             // modal div
+            // if recipe card modals already exist from initial search, get rid of them
+            if(document.querySelector(`.search-modal-${i}`) !== null){
+                removeAllChildNodes(document.querySelector(`.search-modal-${i}`))
+                document.querySelector(`.search-modal-${i}`).remove()
+            }
+
             const modalDiv = document.createElement('div') 
             modalDiv.classList.add('modal')
             modalDiv.classList.add(`search-modal-${i}`)

@@ -10,7 +10,7 @@ To use FridgeFinder:
 
 (2) Obtain your own free API key here: https://rapidapi.com/spoonacular/api/recipe-food-nutrition/.
 
-(3) In the ".env_sample" file, replace "YOUR_API_KEY" with the obtained API key. Then, rename the file to ".env"
+(3) In the "app.js" file, replace "YOUR_API_KEY" on line 5 with the obtained API key.
 
 (4) Open the "index.html" file.
 
